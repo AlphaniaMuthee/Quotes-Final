@@ -1,0 +1,13 @@
+.row {
+  color: white;
+}
+#icon {
+  background-color: white;
+  opacity: 0.9;
+}
+#share {
+  color: black;
+  background-color: white;
+  opacity: 0.8;
+  font-size: 20px;
+}

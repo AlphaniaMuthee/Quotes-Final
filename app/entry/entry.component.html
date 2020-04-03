@@ -1,0 +1,11 @@
+
+<form #goalForm='ngForm' (ngSubmit)='submit()' class="entryform">
+  <h2>Fill this form to share your quote</h2>
+  <input type="text" class="entry" [(ngModel)]="newquote.userquote" name="quote" placeholder="Your quote goes here"><br><br>
+  <input type="text" class="entry" [(ngModel)]="newquote.author" name="author" placeholder="Author"><br><br>
+  <input type="text" class="entry" [(ngModel)]="newquote.Username" name="name" placeholder="Your Username"><br><br>
+  <input type="date" class="entry" [(ngModel)]="newquote.submit" name="date"><br><br>
+  <button type="submit" class="btn btn-info">Share Quote</button>
+  <br><br>
+  <img src="https://images-na.ssl-images-amazon.com/images/I/51nrdDqtx2L.png" alt="quotes logo" height="150px" width="150px">
+</form>

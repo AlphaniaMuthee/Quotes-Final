@@ -1,0 +1,11 @@
+#file{
+  text-align: center;
+  font-family: serif;
+  background-color: aliceblue;
+  background-image: url("https://images7.alphacoders.com/668/thumb-1920-668084.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#file h2{
+  font-size: 100px;
+}

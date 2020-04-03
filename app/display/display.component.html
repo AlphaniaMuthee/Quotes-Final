@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="output">
+        <h2>Amazing Quotes for You!</h2>
+            <div *ngFor = 'let winner of winners'>
+                <p appHighlight ><strong>CONGRATULATIONS!!!</strong><br>The best quote is: {{winner.userquote}}<br> by {{winner.author}}</p>
+                <br><br>
+            </div>
+          <ul>
+            <div *ngFor='let quote of quotes;let i = index'>
+              <li>
+                  <p>{{quote.userquote}}<br><strong>{{quote.author}}</strong></p>
+                  <button (click)='toggleDetails(i)'>More Info</button>
+                  <br>
+                  <div *ngIf='quote.showUsername'>
+                    <p>Posted by: {{quote.Username}} on {{quote.submit|date}}, {{quote.submit|daysCount}} days ago.</p>
+                    <button class="btn btn-info" (click)=delete()>Delete Quote</button><br><br>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button (click)="upvote(quote)" (click)="bestquote()"><img src="https://i.imgur.com/rbi50zT.png" alt="upvote icon" height="20px" width="20px"></button><strong>{{quote.Upvote}}</strong>
+                    </div>
+                    <div class="col-md-6">
+                      <button (click)="downvote(quote)" ><img src="https://4vector.com/i/free-vector-arrow-orange-down-clip-art_120059_arrow-orange-down-clip-art/Arrow_Orange_Down_clip_art_hight.png" alt="downvote icon" height="20px" width="20px"></button> <strong>{{quote.Downvote}}</strong>
+                    </div>
+                  </div>
+              </li>
+            </div>
+          </ul>
+          <div id=social>
+            <div class="row" id="share">
+              <p><strong>Share the quotes via any of these social platforms:</strong></p>
+            </div>
+            <div class= "row" id="icon">
+              <div class="col-md-2">
+                <img src="https://i.dlpng.com/static/png/6438726_preview.png" alt="gmail icon" height="45px" width="50px">
+              </div>
+              <div class="col-md-2">
+                <img src="https://toppng.com/uploads/preview/transparent-background-twitter-logo-115496806068c9eheqhlg.png" alt="twitter icon" height="50px" width="50px">
+              </div>
+              <div class="col-md-2">
+                <img src="https://pngimg.com/uploads/instagram/instagram_PNG11.png" alt="Instagram icon" height="50px" width="50px">
+              </div>
+              <div class="col-md-2">
+                <img src="https://www.poweredgeasia.com/wp-content/uploads/2016/05/transparent-Linkedin-logo-icon.png" alt="linkedIn icon" height="50px" width="50px">
+              </div>
+              <div class="col-md-2">
+                <img src="https://i.ya-webdesign.com/images/whatsapp-logo-png-transparent-background-1.png" alt="whatsApp Icon" height="47px" width="52px">
+              </div>
+              <div class="col-md-2">
+                <img src="https://i7.pngguru.com/preview/605/858/382/facebook-inc-logo-computer-icons-like-button-facebook-icon.jpg" alt="Facebook icon" height="50px" width="50px">
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+  <br>
+  <div class="col-md-6">
+    <app-entry (addquote)="addquote($event)"></app-entry>
+  </div>
+</div>
